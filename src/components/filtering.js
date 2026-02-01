@@ -21,11 +21,8 @@ export function initFiltering(elements, indexes) {
     return (data, state, action) => {
         // @todo: #4.2 — обработать очистку поля
         // @todo: #4.5 — отфильтровать данные используя компаратор
-        console.log("filter ", data.filter(row => {return compare(row, state)}));
         
         return data.filter(row => {
-            // let result = compare(row, state);
-            // console.log(`Сравнение для ${JSON.stringify(row)} и ${JSON.stringify(state)}: ${result}`);
             return compare(row, state)});
     }
 }

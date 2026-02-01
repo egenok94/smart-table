@@ -4,7 +4,6 @@ import {rules, createComparison} from "../lib/compare.js";
 export function initSearching(searchField) {
     // @todo: #5.1 — настроить компаратор
 
-    console.log(searchField);
 
     const standardRules = ['skipEmptyTargetValues',];
     const customRules = [rules.searchMultipleFields(searchField, ['date', 'customer', 'seller'], false)];

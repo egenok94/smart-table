@@ -158,7 +158,6 @@ const rules = {
 
         // Убедиться, что поисковый запрос это строка
         const searchTerm = String(targetValue);
-        console.log(searchTerm);
 
         // Проверить, содержит ли какое-либо из указанных полей исходного объекта поисковый запрос
         for (const field of searchFields) {
