@@ -3,6 +3,15 @@
 // @todo: #4.3 — настроить компаратор
 // const compare = createComparison(defaultRules);
 
+// let buttons = document.getElementsByName("clear");
+// console.log(buttons);
+
+// buttons.forEach(button => {
+//     button.addEventListener("click", e => {
+//         console.log(e.target);
+//     })
+// })
+
 export function initFiltering(elements) {
     const updateIndexes = (elements, indexes) => {
         Object.keys(indexes).forEach((elementName) => {
@@ -17,7 +26,11 @@ export function initFiltering(elements) {
 
     const applyFiltering = (query, state, action) => {
         // код с обработкой очистки поля
-         
+        if (typeof action === "object" && action.tagName === "BUTTON" && action.name === "clear") {
+            let input = action.parentElement.querySelector("input");
+            input.value = "";
+            state[input.name] = "";
+        }
 
         // @todo: #4.5 — отфильтровать данные, используя компаратор
         const filter = {};
